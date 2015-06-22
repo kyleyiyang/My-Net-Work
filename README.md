@@ -1,2 +1,2 @@
-# login.php
+# for user login
 for user login
