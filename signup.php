@@ -113,9 +113,9 @@ p {color: red}
 <h2>Please register</h2>
 <p>* required field</p>
 <form method="post" action="signup.php"><pre>
-    Name: <input type="text" name="user" value=$user><span class="error"> * $nameErr</span><br>
-  E-mail: <input type="text" name="email" value=$email><span class="error"> * $emailErr</span><br>
-Password: <input type="text" name="pass" value=$pass><span class="error"> * $passwordErr</span><br>
+    Name: <input type="text" maxlength='16' name="user" value='$user' onBlur='checkUser(this)' /><span class="error" id='info'> * $nameErr</span><br>
+  E-mail: <input type="text" maxlength='50' name="email" value='$email' /><span class="error"> * $emailErr</span><br>
+Password: <input type="text" maxlength='16' name="pass" value='$pass' /><span class="error"> * $passwordErr</span><br>
  comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
           <input type="submit" name="submit" value="Submit" />
 </pre>
