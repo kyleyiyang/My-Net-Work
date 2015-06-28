@@ -8,4 +8,4 @@ This APP includes the followings:
 6. The user can log out;
 7. The process is under session control.
 
-*need to load setup.php to connect to database prior to run any other files. 
+*need to load setup.php to connect to database prior to running any other files. 
