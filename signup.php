@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!preg_match("/^[a-zA-Z ]*$/",$user)) {
             $nameErr = "Only letters and white space allowed";
         } else {
-            $query = "SELECT * FROM members WHERE user='$user'";
+            $query = "SELECT * FROM members WHERE user='$user'";  //The following if clause is included in checkuser.php
             if (mysql_num_rows(queryMysql($query))) {
                 $nameErr = "That username already exists";
             }
@@ -91,11 +91,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $comment = sanitizeString($_POST["comment"]);
     }
     
-    
+    //The following if clause may be placed bellow the form's html.
     if (!$nameErr and !$emailErr and !$passwordErr) {
         $query = "INSERT INTO members VALUES('$user', '$pass', '$email')";
         queryMysql($query);
         echo "<h2>Account created!</h2>Please Log in";
+        echo "<style>div {display: none}</style>";
     }
 }
 
@@ -104,32 +105,34 @@ echo <<<_END
 <head>
 <title>Registration Form</title>
 <style>
-body {width: 50%; margin: 0 auto}
+body {width: 60%; margin: 0 auto}
 .error {color: red}
 p {color: red}
 </style>
 </head>
 <body>
-<h2>Please register</h2>
+<div>
+<h3>Please register</h3>
 <p>* required field</p>
 <form method="post" action="signup.php"><pre>
     Name: <input type="text" maxlength='16' name="user" value='$user' onBlur='checkUser(this)' /><span class="error" id='info'> * $nameErr</span><br>
   E-mail: <input type="text" maxlength='50' name="email" value='$email' /><span class="error"> * $emailErr</span><br>
-Password: <input type="text" maxlength='16' name="pass" value='$pass' /><span class="error"> * $passwordErr</span><br>
+Password: <input type="password" maxlength='16' name="pass" value='$pass' /><span class="error"> * $passwordErr</span><br>
  comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
           <input type="submit" name="submit" value="Submit" />
 </pre>
 </form>
 </body>
+</div>
 </html>
 _END;
 
-echo "<h2>Your Input:</h2>";
-echo $user;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $pass;
-echo "<br>";
-echo $comment;
+// echo "<h2>Your Input:</h2>";
+// echo $user;
+// echo "<br>";
+// echo $email;
+// echo "<br>";
+// echo $pass;
+// echo "<br>";
+// echo $comment;
 ?>
