@@ -7,3 +7,5 @@ This APP includes the followings:
 5. Members can send public or private messages to others;
 6. The user can log out;
 7. The process is under session control.
+
+*need to load setup.php to connect to database prior to run any other files. 
