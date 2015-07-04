@@ -71,8 +71,8 @@ showProfile($user);
 echo <<<_END
 <form method='post' action='profile.php' enctype='multipart/form-data'>
 Enter or edit your details and/or upload an image:<br />
-<textarea name='text' cols='40' rows='3'>$text</textarea><br />
-Image: <input type='file' name='image' size='14' maxlength='32' /><br />
+<textarea name='text' cols='46' rows='3'>$text</textarea><br />
+Image: <input type='file' name='image' size='14' maxlength='32' />
 <input type='submit' value='Save Profile' />
 </form>
 _END;
