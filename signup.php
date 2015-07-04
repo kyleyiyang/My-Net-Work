@@ -105,9 +105,10 @@ echo <<<_END
 <head>
 <title>Registration Form</title>
 <style>
-body {width: 60%; margin: 0 auto}
+body {width: 54%; margin: 0 auto}
 .error {color: red}
 p {color: red}
+pre {font-size: 16px}
 </style>
 </head>
 <body>
@@ -118,7 +119,7 @@ p {color: red}
     Name: <input type="text" maxlength='16' name="user" value='$user' onBlur='checkUser(this)' /><span class="error" id='info'> * $nameErr</span><br>
   E-mail: <input type="text" maxlength='50' name="email" value='$email' /><span class="error"> * $emailErr</span><br>
 Password: <input type="password" maxlength='16' name="pass" value='$pass' /><span class="error"> * $passwordErr</span><br>
- comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
+ Comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
           <input type="submit" name="submit" value="Submit" />
 </pre>
 </form>
