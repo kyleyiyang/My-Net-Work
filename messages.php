@@ -7,6 +7,8 @@ $user = $_SESSION['user'];
 if (isset($_GET['view'])) $view = sanitizeString($_GET['view']);
 else $view = $user;
 
+include_once 'email.php';
+
 if (isset($_POST['text'])) {
     $text = sanitizeString($_POST['text']);
     
