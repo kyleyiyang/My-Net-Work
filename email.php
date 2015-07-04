@@ -5,7 +5,6 @@
 //The code was modified according to https://github.com/PHPMailer/PHPMailer/blob/master/examples/gmail.phps
 // and http://phpmailer.worxware.com/index.php?pg=examplebgmail
 //Need to select "php/extensions/php_openssl" from the WampServer.
-//Run the file on a browser.
 
 require_once('phpmailer/class.phpmailer.php');
 include('phpmailer/class.smtp.php');
@@ -22,7 +21,7 @@ $mail = new PHPMailer();
 
 $mail->IsSMTP();
 // $mail->Host = 'MyNetWork.com';
-$mail->SMTPDebug = 2;
+//$mail->SMTPDebug = 2; //if you want to show details, uncomment it.
 $mail->Debugoutput = 'html';
 $mail->SMTPAuth = true;
 $mail->SMTPSecure = 'tls';
@@ -49,7 +48,7 @@ $mail->AddAddress($address);
 if (!$mail->Send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo 'Message sent';
+    echo '<br /><br />Message sent';
 }
     }
 }
