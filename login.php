@@ -21,6 +21,9 @@ if (isset($_POST['user'])) {
 }
 
 echo <<<_END
+<style>
+pre {font-size: 16px}
+</style>
 <form method='post' action='login.php'>$error<pre>
     Name <input type='text' maxlength='16' name='user' value='$user' /><br />
 Password <input type='password' maxlength='16' name='pass' value='$pass' /><br />
