@@ -57,4 +57,6 @@ for ($j = 0; $j < $num; ++$j) {
         echo " [<a href='members.php?remove=".$row[0] . "'>drop</a>]";
     }
 }
+
+echo "<br /><br /><a href='search.php'>Click here<a/> to search members.";
 ?>
