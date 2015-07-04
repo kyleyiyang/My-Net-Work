@@ -1,7 +1,7 @@
 <?php
 include_once 'header.php';
 
-if (!$_SESSION['user']) die("<br /><br />You need to login to view this page");
+if (!isset($_SESSION['user'])) die("<br /><br />You need to login to view this page");
 $user = $_SESSION['user'];
 
 if (isset($_GET['view'])) $view = sanitizeString($_GET['view']);
