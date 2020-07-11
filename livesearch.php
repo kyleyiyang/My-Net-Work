@@ -10,7 +10,7 @@ $num = mysql_num_rows($result);
 if ($num) {
     for ($j = 0; $j < $num; ++$j) {
         $row = mysql_fetch_row($result);
-        echo "<a href='members.php?view=$row[0]'>$row[0]</a><br />";
+        echo "<a href='members.php?view=$row[$j]'>$row[$j]</a><br />";
     }
 } else echo "No suggestions<br />";
 ?>
